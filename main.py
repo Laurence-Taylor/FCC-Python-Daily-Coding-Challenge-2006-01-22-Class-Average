@@ -1,12 +1,13 @@
 def get_average_grade(scores):
-    set_scores = (('A+',79,100),('A',93,96),('A-',90,92),('B+',87,89),('B',83,86),('B-',80,82),('C+',77,79),('C',73,76),('C-',70,72),('D+',67,69),('D',63,66),('D-',60,62),('F',0,59))
+    # Create a set of posible values and ranges ( The TABLE)
+    set_scores = (('A+',97,100),('A',93,96),('A-',90,92),('B+',87,89),('B',83,86),('B-',80,82),('C+',77,79),('C',73,76),('C-',70,72),('D+',67,69),('D',63,66),('D-',60,62),('F',0,59))
+    # Calculate the average
     prom = sum(scores)/len(scores)
-    print(prom)
+    # iterate over each element of the possible results of The TABLE
     for i in range(len(set_scores)):
-        #print(i)
-        #print(prom in range(set_scores[i][1],set_scores[i][2]))
-        if (prom in range(set_scores[i][1],set_scores[i][2])): return set_scores[i][0]
-    return prom
+        # if the average in the range of the letter, return the letter. 
+        # in this case add 1 to the max score to account for possible decimal values between a minimum and a maximum grade. 
+        if (set_scores[i][1] <= prom < set_scores[i][2]+1): return set_scores[i][0]
 
 if __name__ == '__main__':
     print(get_average_grade([92, 91, 90, 94, 89, 93]))
