@@ -16,7 +16,7 @@ Average Score Letter Grade
 67-69           "D+"
 63-66           "D"
 60–62           "D-"
-below 60         "F"
+below 60        "F"
 
 ```
 
